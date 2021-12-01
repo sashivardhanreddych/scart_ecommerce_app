@@ -1,0 +1,37 @@
+Angular :
+---------
+
+Angular is a javascript framework (It contains multiple libraries and inbuild architecture)
+
+version: 
+Angular 1 & 2 --> angular js 
+more than 2   --> angular
+
+prerequisites:
+
+machine dependencies:
+visual studio code editor
+node            node -v
+npm             npm -v
+angular cli     ng -v
+
+commands:
+
+ng new projectname
+cd projectname (cd - change directory)
+ng serve  --> for run
+
+
+
+Flow of execution in Angular :
+ng serve --> main.ts
+
+
+
+how can we generate module
+
+ng generate component global_components/login
+ng g c global_components/signup
+
+ng generate module user-Dashboard
+ng g m user-Dashboard

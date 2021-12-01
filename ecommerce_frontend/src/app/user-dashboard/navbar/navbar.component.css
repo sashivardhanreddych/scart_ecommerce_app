@@ -1,0 +1,84 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #0a65cc;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.mat-list-item {
+  text-decoration: none;
+  color: white;
+  font-size: 4mm;
+}
+
+.mat-list-item:hover {
+
+  font-weight: 500;
+
+}
+
+.mat-icon {
+  font-size: 5.5mm;
+
+}
+
+.mat-toolbar {
+  color: white;
+  padding: 8px 0px 8px 10px;
+}
+
+h3{
+ text-align:center;
+ margin-top:-50px;
+}
+
+.active{
+   background-color:rgb(90, 168, 231);
+   border:1px solid white;
+   border-radius:4px; 
+  font-weight:bold;
+
+}
+
+
+.load-spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+
+  opacity: 0.7;
+  z-index: 99;
+};
+
+.hamburger_menu{
+  float:right;
+}
+
+
+mat-toolbar,h5{
+  position:sticky;
+  top:0%;
+}
+
+
+.search-bar {
+  margin: 0 0 0 10%;
+  height: 31px;
+  width: 220px;
+  border-radius: 5px;
+  background: #FAFAFA;
+  text-align: center;
+}

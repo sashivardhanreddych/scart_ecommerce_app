@@ -1,0 +1,36 @@
+body{
+   display:grid;
+   place-items:center;
+   width:100%;
+   min-height:600px;
+   height: 100%;
+   max-height:100vh;
+   background: linear-gradient(to left, #7808f0, #06bdf5);
+}
+
+.jumbotron{
+  min-width:280px;
+  max-width:500px;
+  width:100%;
+  margin:0px auto;
+  border-radius:15px;
+  box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
+}
+
+:host ::ng-deep .p-password input {
+  max-width:450px;
+  min-width:350px;
+  width: 100%;
+}
+
+.header_text{
+  color: #40323A;
+  font-size:28px;
+  font-weight:600;
+  text-shadow: 1px 1px 2px #000000;
+   /* border-bottom: 3px solid black; */
+}
+
+.login_container {
+  margin: 10px auto 0 100px;
+}

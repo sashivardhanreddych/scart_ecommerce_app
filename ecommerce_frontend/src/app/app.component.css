@@ -1,0 +1,23 @@
+.navbar-dark .navbar-nav .nav-link {
+  color: #000;
+}
+ul li a {
+  color:#000;
+}
+.img-ht{
+  height:40px;
+}
+ul li{
+  float:right;
+}
+.load-spinner{
+position:absolute;
+width:100%;
+height:100%;
+background-color:black;
+
+opacity:0.7;
+z-index:99;
+};
+
+

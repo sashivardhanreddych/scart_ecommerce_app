@@ -1,0 +1,162 @@
+<!-- <p-toast position="top-center" key="toastElement"></p-toast> -->
+<body>
+  <!-- <div class="wrapper fadeInDown"> -->
+  <div class="jumbotron m-1">
+    <form #userdata="ngForm" (ngSubmit)="onSubmit(userdata.value)">
+      <div class="text-center mb-2">
+        <span class="header_text">SIGNUP</span>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone :</label>
+        <input
+          type="number"
+          placeholder="Enter Your Mobile Number"
+          id="phone"
+          class="form-control"
+          name="phone"
+          [class.is-invalid]="!phone.valid &&phone.touched"
+          [class.is-valid]="phone.valid && phone.touched"
+          
+          pattern = "^[0-9]{10}$"
+          #phone="ngModel"
+          ngModel
+          required
+        />
+
+        <!-- <small
+          class="text-danger"
+          [class.d-none]="phone.valid || !phone.touched"
+          >Phone is required</small
+        > -->
+        <!-- <small class="text-info" [class.d-none]="phone.invalid || phone.untouched">
+         Please, Enter a valid 10 digit Phone Number
+        </small> -->
+        <div class ="text-danger error_container"  *ngIf="phone.errors?.required && phone.touched">
+            Mobile Number is required.
+          </div>
+        <div class ="text-danger error_container" *ngIf="phone.errors?.pattern">
+            Please, Enter 10 digit Mobile Number.
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="fullname">Full Name :</label>
+        <input
+          type="text"
+          placeholder="Enter Your Full Name"
+          id="fullname"
+          class="form-control"
+          [class.is-invalid]="!name.valid && name.touched"
+          [class.is-valid]="name.valid && name.touched"
+          name="name"
+          #name="ngModel"
+          ngModel
+          required
+        />
+        <small
+          class="text-danger"
+          [class.d-none]="name.valid ||name.untouched"
+          >Full Name is required</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          id="password"
+          class="form-control"
+          pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+          [class.is-invalid]="!password.valid && password.touched"
+          [class.is-valid]="password.valid && password.touched"
+          name="password"
+          #password="ngModel"
+          ngModel
+          required
+        />
+        <div class ="text-danger error_container"  *ngIf="password.errors?.required && password.touched">
+            Password is required.
+          </div>
+        <div class ="text-danger error_container" *ngIf="password.errors?.pattern">
+            Min 8, atleast 1 upper, lowercase, digit & special character
+          </div>
+      </div>
+
+      <label for="gender">Gender :</label>
+      <br>
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio1">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio1"
+            name="gender"
+            value="male"
+            #gender="ngModel"
+            ngModel
+          /><label>Male</label>
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio2">
+          <input
+            type="radio"
+            class="form-check-input"
+            id="radio2"
+            name="gender"
+            value="female"
+            #gender="ngModel"
+            ngModel
+          />Female
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label" for="radio3">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="gender"
+            value="other"
+            id="other"
+            #gender="ngModel"
+            ngModel
+          />Other
+        </label>
+      </div>
+      <div class ="text-danger error_container"  *ngIf="gender.errors?.required && gender.touched">
+            Gender is required.
+      </div>
+
+      <!-- <div class="form-group mt-2">
+            <label for="x4">Age :</label>
+            <input type="number" placeholder="Enter Your Age" id='x4' class="form-control"
+              [class.is-invalid]="!n7.valid && n7.touched" [class.is-valid]="n7.valid && n7.touched" name="age"
+              #n7="ngModel" ngModel required>
+            <small class="text-danger" [class.d-none]="n7.valid || n7.untouched">age is required</small>
+          </div>
+          <div class="form-group">
+            <label for="x5">Date Of Birth :</label>
+            <input type="date" placeholder="dob" id='x5' class="form-control"
+              [class.is-invalid]="!n8.valid && n8.touched" [class.is-valid]="n8.valid && n8.touched" name="dob"
+              #n8="ngModel" ngModel required>
+            <small class="text-danger" [class.d-none]="n8.valid || n8.untouched">Dob is required</small>
+          </div>
+          <div class="form-group">
+            <label for="x6">Mobile Number :</label>
+            <input type="text" placeholder="Enter Your Mobile Number" id='x6' class="form-control"
+              [class.is-invalid]="!n9.valid && n9.touched" [class.is-valid]="n9.valid && n9.touched"
+              name="mobile_number" #n9="ngModel" ngModel required>
+            <small class="text-danger" [class.d-none]="n9.valid || n9.untouched">mobile number is required</small>
+          </div> -->
+      <div class="text-center mb-0">
+        <button [disabled]="userdata.form.invalid" class="btn btn-success">
+          SUBMIT
+        </button>
+      </div>
+      <div class="login_container ">
+        <span>Already Have an Account? </span>
+        <a routerLink="users/login">Log In</a> 
+      </div>
+    </form>
+    <!-- </div> -->
+  </div>
+</body>

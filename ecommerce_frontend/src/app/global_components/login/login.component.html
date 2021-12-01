@@ -1,0 +1,94 @@
+<!-- <p-toast position="top-center" key="toastElement"></p-toast> -->
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!-- <img src="./assets/images/slogo.png" id="icon" alt="User Icon" /> -->
+      <span class="brand_name">S-CART</span>
+    </div>
+
+    <!-- Login Form -->
+
+    <form [formGroup]="myGroup" (ngSubmit)="onLogin(f)">
+      <div class="form-group">
+        <label class="label_container">Phone :</label>
+        <input
+          type="number"
+          class="form-control fadeIn second"
+          id="mobileNumber"
+          placeholder="Enter Your Mobile Number"
+          formControlName="mobileNumber"
+        />
+
+        <div
+          *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid"
+          class="text-danger error_container"
+        >
+          <div *ngIf="f.mobileNumber.errors?.required">
+            Mobile Number is required.
+          </div>
+          <div *ngIf="f.mobileNumber.errors?.pattern">
+            Please, Enter 10 digit Mobile Number.
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="form-group">
+      <label for="email">Email :</label>
+      <input
+        type="email"
+        placeholder="Enter Your Email"
+        id="email"
+        class="form-control"
+        name="email"
+        [class.is-invalid]="!email.valid && email.touched"
+        [class.is-valid]="email.valid && email.touched"
+        #email="ngModel"
+        ngModel
+        required
+      />
+      <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required</small>
+    </div> -->
+
+      <div class="form-group mt-4">
+        <label class="label_container">Password :</label>
+        <input
+          type="password"
+          class="form-control fadeIn third"
+          id="password"
+          placeholder="Enter Your Password"
+          formControlName="password"
+        />
+
+        <div
+          *ngIf="f.password.touched && f.password.invalid"
+          class="text-danger error_container"
+        >
+          <div *ngIf="f.password.errors?.required">Password is required.</div>
+          <div *ngIf="f.password.errors?.pattern">
+            Enter Your Valid Password.
+          </div>
+        </div>
+      </div>
+      <div class="submit-container">
+        <input
+          type="submit"
+          [disabled]="!myGroup.valid"
+          class="fadeIn fourth"
+          value="Log In"
+        />
+      </div>
+      <div class="signup_container mb-3">
+        <span>Not Have an Account? </span>
+        <a routerLink="users/signup">Sign Up</a> 
+      </div>
+    </form>
+
+
+    <div id="formFooter">
+      <a routerLink="users/forgotpassword" class="underlineHover"
+        >Forgot Password?</a
+      >
+    </div>
+  </div>
+</div>
