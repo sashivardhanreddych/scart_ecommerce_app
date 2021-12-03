@@ -13,10 +13,10 @@
 // }
 
 // const config = {
-//     user :"team1_db_user",
-//     password :'Dt@2021',
+//     user :"sa",
+//     password :'Svrc#17031997',
 //     server:'ec2-54-161-48-202.compute-1.amazonaws.com',
-
+//     database:"DB_ECOMMERCE",
 //     options:{
 //         trustedconnection: true,
 //         enableArithAbort : true,
@@ -28,10 +28,10 @@
 // }
 
 const config = {
-  user: "schandra",
+  user: "sa",
   password: "Svrc#17031997",
-  server: "ec2-3-85-95-110.compute-1.amazonaws.com",
-  database: "db_ecommerce",
+  server: "IM-RT-LP-609",
+  database: "DB_ECOMMERCE",
   pool: { max: 100 },
   connectionTimeout: 300000,
   requestTimeout: 300000,

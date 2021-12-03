@@ -31,7 +31,7 @@
           </div>
       </div>
 
-      
+      <!-- pattern=" /^([\w]{3,})+\s+([\w\s]{3,})+$/i" -->
       <div class="form-group">
         <label for="fullname">Full Name :</label>
         <input
@@ -39,19 +39,25 @@
           placeholder="Enter Your Full Name"
           id="fullname"
           class="form-control"
-          [class.is-invalid]="!name.valid && name.touched"
-          [class.is-valid]="name.valid && name.touched"
-          name="name"
-          #name="ngModel"
+          [class.is-invalid]="!fullname.valid &&fullname.touched"
+          [class.is-valid]="fullname.valid &&fullname.touched"
+          name="fullname"
+          pattern="^[a-zA-Z]{3,30}$"
+          #fullname="ngModel"
           ngModel
-          required
-        />
-        <small
+          required/>
+        <div
           class="text-danger"
-          [class.d-none]="name.valid ||name.untouched"
-          >Full Name is required</small
+          *ngIf="fullname.errors?.required &&fullname.touched"
+          >Full Name is required</div
+        >
+        <div
+          class="text-danger"
+          *ngIf="fullname.errors?.pattern"
+          >Min 3,Max 30 and not allowed digits & special char's</div
         >
       </div>
+      
       <div class="form-group">
         <label for="password">Password:</label>
         <input
@@ -67,10 +73,10 @@
           ngModel
           required
         />
-        <div class ="text-danger error_container"  *ngIf="password.errors?.required && password.touched">
+        <div class ="text-danger"  *ngIf="password.errors?.required && password.touched">
             Password is required.
           </div>
-        <div class ="text-danger error_container" *ngIf="password.errors?.pattern">
+        <div class ="text-danger" *ngIf="password.errors?.pattern">
             Min 8, atleast 1 upper, lowercase, digit & special character
           </div>
       </div>
@@ -122,27 +128,54 @@
             Gender is required.
       </div>
 
-      <!-- <div class="form-group mt-2">
-            <label for="x4">Age :</label>
-            <input type="number" placeholder="Enter Your Age" id='x4' class="form-control"
-              [class.is-invalid]="!n7.valid && n7.touched" [class.is-valid]="n7.valid && n7.touched" name="age"
-              #n7="ngModel" ngModel required>
-            <small class="text-danger" [class.d-none]="n7.valid || n7.untouched">age is required</small>
+      <div class="form-group">
+        <label for="phone">Age :</label>
+        <input
+          type="number"
+          placeholder="Enter Your Age"
+          id="age"
+          class="form-control"
+          name="age"
+          [class.is-invalid]="!age.valid && age.touched"
+          [class.is-valid]="age.valid && age.touched"
+          
+          pattern = "^[0-9]{1,3}$"
+          #age="ngModel"
+          ngModel
+          required
+        />
+        <div class ="text-danger error_container"  *ngIf="age.errors?.required && age.touched">
+            Age is required.
           </div>
-          <div class="form-group">
-            <label for="x5">Date Of Birth :</label>
-            <input type="date" placeholder="dob" id='x5' class="form-control"
-              [class.is-invalid]="!n8.valid && n8.touched" [class.is-valid]="n8.valid && n8.touched" name="dob"
-              #n8="ngModel" ngModel required>
-            <small class="text-danger" [class.d-none]="n8.valid || n8.untouched">Dob is required</small>
+        <div class ="text-danger error_container" *ngIf="age.errors?.pattern">
+            Please, Enter your Age
           </div>
-          <div class="form-group">
-            <label for="x6">Mobile Number :</label>
-            <input type="text" placeholder="Enter Your Mobile Number" id='x6' class="form-control"
-              [class.is-invalid]="!n9.valid && n9.touched" [class.is-valid]="n9.valid && n9.touched"
-              name="mobile_number" #n9="ngModel" ngModel required>
-            <small class="text-danger" [class.d-none]="n9.valid || n9.untouched">mobile number is required</small>
-          </div> -->
+      </div>
+
+      <!-- pattern="\d{2}/\d{2}/\d{4}" -->
+      <div class="form-group">
+        <label for="dob">Birth Date :</label>
+        <input
+          type="date"
+          placeholder="dd-mm-yyyy"
+          id="dob"
+          class="form-control"
+          name="dob"
+          [class.is-invalid]="!dob.valid && dob.touched"
+          [class.is-valid]="dob.valid && dob.touched"
+          min="1940-01-01" max="date"
+          
+          #dob="ngModel"
+          ngModel
+          required
+        />
+        <div class ="text-danger error_container"  *ngIf="dob.errors?.required && dob.touched">
+           Birth Date is required.
+          </div>
+        <div class ="text-danger error_container" *ngIf="dob.errors?.pattern || dob.errors?.valid">
+            Please, Enter Valid Birth.
+          </div>
+      </div>
 
 
 
