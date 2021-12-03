@@ -24,6 +24,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProductsTableComponent } from './products-table/products-table.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 
 
@@ -37,7 +38,8 @@ import { ProductsTableComponent } from './products-table/products-table.componen
     DashboardComponent,
     NavbarComponent,
     FilterPipe,
-    ProductsTableComponent
+    ProductsTableComponent,
+    EditProfileComponent
   ],
   // Imported modules
   imports: [

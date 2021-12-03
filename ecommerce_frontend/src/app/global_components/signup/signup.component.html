@@ -1,43 +1,37 @@
 <!-- <p-toast position="top-center" key="toastElement"></p-toast> -->
 <body>
   <!-- <div class="wrapper fadeInDown"> -->
-  <div class="jumbotron m-1">
+  <div class="jumbotron m-4">
     <form #userdata="ngForm" (ngSubmit)="onSubmit(userdata.value)">
       <div class="text-center mb-2">
         <span class="header_text">SIGNUP</span>
       </div>
+
       <div class="form-group">
-        <label for="phone">Phone :</label>
+        <label for="email">Email :</label>
         <input
-          type="number"
-          placeholder="Enter Your Mobile Number"
-          id="phone"
+          type="email"
+          placeholder="Enter Your Email"
+          id="email"
           class="form-control"
-          name="phone"
-          [class.is-invalid]="!phone.valid &&phone.touched"
-          [class.is-valid]="phone.valid && phone.touched"
+          name="email"
+          [class.is-invalid]="!email.valid &&email.touched"
+          [class.is-valid]="email.valid && email.touched"
           
-          pattern = "^[0-9]{10}$"
-          #phone="ngModel"
+          pattern ="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+          #email="ngModel"
           ngModel
           required
         />
-
-        <!-- <small
-          class="text-danger"
-          [class.d-none]="phone.valid || !phone.touched"
-          >Phone is required</small
-        > -->
-        <!-- <small class="text-info" [class.d-none]="phone.invalid || phone.untouched">
-         Please, Enter a valid 10 digit Phone Number
-        </small> -->
-        <div class ="text-danger error_container"  *ngIf="phone.errors?.required && phone.touched">
-            Mobile Number is required.
+        <div class ="text-danger error_container"  *ngIf="email.errors?.required && email.touched">
+            Email is required.
           </div>
-        <div class ="text-danger error_container" *ngIf="phone.errors?.pattern">
-            Please, Enter 10 digit Mobile Number.
+        <div class ="text-danger error_container" *ngIf="email.errors?.pattern">
+            Please, Enter Valid Email.
           </div>
       </div>
+
+      
       <div class="form-group">
         <label for="fullname">Full Name :</label>
         <input
@@ -93,6 +87,7 @@
             value="male"
             #gender="ngModel"
             ngModel
+            required
           /><label>Male</label>
         </label>
       </div>
@@ -106,6 +101,7 @@
             value="female"
             #gender="ngModel"
             ngModel
+            required
           />Female
         </label>
       </div>
@@ -147,6 +143,33 @@
               name="mobile_number" #n9="ngModel" ngModel required>
             <small class="text-danger" [class.d-none]="n9.valid || n9.untouched">mobile number is required</small>
           </div> -->
+
+
+
+      <div class="form-group">
+        <label for="phone">Phone :</label>
+        <input
+          type="number"
+          placeholder="Enter Your Mobile Number"
+          id="phone"
+          class="form-control"
+          name="phone"
+          [class.is-invalid]="!phone.valid &&phone.touched"
+          [class.is-valid]="phone.valid && phone.touched"
+          
+          pattern = "^[0-9]{10}$"
+          #phone="ngModel"
+          ngModel
+          required
+        />
+        <div class ="text-danger error_container"  *ngIf="phone.errors?.required && phone.touched">
+            Mobile Number is required.
+          </div>
+        <div class ="text-danger error_container" *ngIf="phone.errors?.pattern">
+            Please, Enter 10 digit Mobile Number.
+          </div>
+      </div>
+      
       <div class="text-center mb-0">
         <button [disabled]="userdata.form.invalid" class="btn btn-success">
           SUBMIT
