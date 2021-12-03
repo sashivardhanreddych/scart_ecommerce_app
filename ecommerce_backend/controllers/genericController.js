@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 
 //custom imports 
 const config = require('./../dbconfig');
-const generateRandomToken = require("../utilities/generateRandomToken").generateRandomToken;
+const generateRandomToken = require("../utilities/generateRandomToken.js").generateRandomToken;
 const Email = require("./../utilities/email");
 const { check, validationResult } = require("express-validator");
 

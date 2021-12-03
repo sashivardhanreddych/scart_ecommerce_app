@@ -42,11 +42,11 @@ app.listen(port, (err) => {
 // generic
 
 app.use('/generic', genericRouter);
-app.use('/user', userRouter);
+// app.use('/user', userRouter);
 // app.use('api/v1/admin', adminRouter);
-app.use('/post', postRouter);
-app.use('/frnd', frndRouter);
-app.use('/save',savedPostRouter);
+// app.use('/post', postRouter);
+// app.use('/frnd', frndRouter);
+// app.use('/save',savedPostRouter);
 
 app.get('/refresh', async(req, res, next) => {
     
@@ -95,7 +95,7 @@ app.get('/refresh', async(req, res, next) => {
   
 })
 
-app.get('/personalizedFeed/:userId', helper.recommendedFeed);
+// app.get('/personalizedFeed/:userId', helper.recommendedFeed);
 
 // http://ec2-54-161-48-202.compute-1.amazonaws.com/hackathon/hustlers/api/
 //wildcard route
