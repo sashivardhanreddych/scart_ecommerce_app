@@ -1,3 +1,4 @@
+// Imports from npm dependencies
 const express = require("express");
 const cors = require("cors");
 const sql = require("mssql");
@@ -16,6 +17,7 @@ const genericRouter=require('./routes/genericRoutes')
 
 
 //middlewares in express
+
 // app.use(express.json({ limit: '2048kb' }));
 // app.use(express.urlencoded({ extended: true, limit: '1024kb' }));
 app.use(cors());
@@ -33,7 +35,7 @@ app.listen(port, (err) => {
       console.log('there is an error while connecting to server');
     }
     else
-    {
+    { 
       console.log(`server is listening on port ${port}`);
     }
 })

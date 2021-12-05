@@ -27,6 +27,9 @@
 //     port :1433
 // }
 
+
+
+// configuration of database
 const config = {
   user: "sa",
   password: "Svrc#17031997",
