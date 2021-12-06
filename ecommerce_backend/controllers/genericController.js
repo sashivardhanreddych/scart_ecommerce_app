@@ -64,7 +64,7 @@ exports.verification = async (req, res, next) => {
     }
     // res.locals.user = user.recordset[0];
     // req.app.locals.user1={name:res.locals.user.name}
-    //     console.log(user);
+        console.log(user);
     res.locals.user = user.recordset[0];
     res.locals.user1 = { name: res.locals.user.name };
   } catch (err) {
@@ -93,12 +93,12 @@ exports.verification = async (req, res, next) => {
  */
 
 exports.signup = async (req, res, next) => {
-  req.body.role = "user";
+  // req.body.role = "user";
   // req.body.age = parseInt(req.body.age);
-  console.log(req.body.dob);
+  // console.log(req.body.dob);
   //req.body.dob = `${new Date('2000-06-05').getFullYear()}-${new Date('2000-06-05').getMonth() + 1}-${new Date('2000-06-05').getDate()}`;
   // req.body.personal_interest = "";
-  // console.log(req.body);
+  console.log("body data:"+req.body);
 
   let pool;
   try {
@@ -106,6 +106,7 @@ exports.signup = async (req, res, next) => {
       req.body.password,
       +process.env.saltRounds
     );
+    console.log("hash password"+req.body.password)
     pool = await new sql.ConnectionPool(config).connect();
     const request = pool.request();
     request.input("email", req.body.email);
@@ -117,7 +118,7 @@ exports.signup = async (req, res, next) => {
     request.input("dob", sql.DateTime, new Date(req.body.dob));
     // request.input('dob', req.body.dob);
     request.input("phone", req.body.phone);
-    response = await request.execute("users");
+    response = await request.execute("sp_users");
     console.log(response);
     if (response.recordset[0].Id < 0) {
       return res.status(400).json({

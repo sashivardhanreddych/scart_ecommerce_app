@@ -21,7 +21,7 @@
 //         trustedconnection: true,
 //         enableArithAbort : true,
 //         instancename: 'MSSQLEXPRESS',
-//         database:'db_dtass',
+//         database:'DB_ECOMMERCE',
 //         //  instancename :'MSSQLSERVER'
 //     },
 //     port :1433

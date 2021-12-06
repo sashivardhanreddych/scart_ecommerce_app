@@ -27,7 +27,7 @@ app.use(helmet());
 
 
 //extract
-// const userController = require('./controllers/userController');
+const userController = require('./controllers/userController');
 const helper= require('./scripts/helper');
 
 
@@ -47,10 +47,7 @@ app.listen(port, (err) => {
 
 app.use('/generic', genericRouter);
 // app.use('/user', userRouter);
-// app.use('api/v1/admin', adminRouter);
-// app.use('/post', postRouter);
-// app.use('/frnd', frndRouter);
-// app.use('/save',savedPostRouter);
+
 
 app.get('/refresh', async(req, res, next) => {
     

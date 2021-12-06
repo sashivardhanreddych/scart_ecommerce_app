@@ -34,8 +34,7 @@ const genericRouter = require("./routes/genericRoutes");
 // const adminRouter = require("./routes/adminRoutes");
 // const postRouter = require("./routes/postRoutes");
 // const frndRouter = require("./routes/frndRoutes");
-
-const savedPostRouter = require("./routes/savePostRoute.js");
+// const savedPostRouter = require("./routes/savePostRoute.js");
 
 app.use(bodyParser.json());
 //Middlewares
@@ -57,10 +56,7 @@ app.get(baseHref + "/", (req, res, next) => {
 
 app.use(baseHref + "/generic", genericRouter);
 app.use(baseHref + "/user", userRouter);
-// app.use('api/v1/admin', adminRouter);
-app.use(baseHref + "/post", postRouter);
-app.use(baseHref + "/frnd", frndRouter);
-app.use(baseHref + "/save", savedPostRouter);
+
 
 //Catch 404 Errors and forward them to error handler
 app.use((req, res, next) => {

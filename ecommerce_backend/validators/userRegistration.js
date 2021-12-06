@@ -4,11 +4,11 @@ exports.validate = [
   check("email").exists().withMessage("Email is must"),
   check("fullname").exists().withMessage("FullName is must").trim().escape(),
 
-  check("role")
-    .exists()
-    .withMessage("role is must")
-    .isIn("user", "admin")
-    .withMessage("Role can either be user or admin"),
+  // check("role")
+  //   .exists()
+  //   .withMessage("role is must")
+  //   .isIn("user", "admin")
+  //   .withMessage("Role can either be user or admin"),
   check("gender")
     .exists()
     .withMessage("Gender is must")
