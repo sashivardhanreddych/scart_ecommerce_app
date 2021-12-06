@@ -15,11 +15,11 @@ export class GlobalService {
   apiBaseUrl: string = environment.apiBaseUrl;
 
   // Backend respective component Url's
-  changePasswordUrl = this.apiBaseUrl + 'changepassword';
-  resetUrl = this.apiBaseUrl + 'resetpassword';
-  forgotUrl = this.apiBaseUrl + 'forgotpassword';
-  loginUrl = this.apiBaseUrl + 'login';
-  registerUrl = this.apiBaseUrl + 'signup';
+  changePasswordUrl = this.apiBaseUrl + 'generic/changepassword';
+  resetUrl = this.apiBaseUrl + 'generic/resetpassword';
+  forgotUrl = this.apiBaseUrl + 'generic/forgotpassword';
+  loginUrl = this.apiBaseUrl + 'generic/login';
+  registerUrl = this.apiBaseUrl + 'generic/signup';
   presentUser: any;
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -69,7 +69,7 @@ export class GlobalService {
     return this.http.patch<any>(this.resetUrl, userObj);
   }
 
-  // Used to change the password 
+  // Used to change the password
   onChangePassword(userObj: any) {
     return this.http.patch<any>(this.changePasswordUrl, userObj);
   }

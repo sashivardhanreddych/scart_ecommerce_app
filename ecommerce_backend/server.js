@@ -4,6 +4,8 @@ const cors = require("cors");
 const sql = require("mssql");
 const helmet = require("helmet");
 const bodyParser = require("body-parser");
+
+// initializing app from express
 const app = express();
 const jwt = require("jsonwebtoken");
 require("dotenv").config();

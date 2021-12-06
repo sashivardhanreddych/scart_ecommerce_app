@@ -4,7 +4,7 @@
  * Description. This is the set of methods for usage of different libraries.
  *
  * @author Sashi
- * @since  21/10/2021
+ * @since  25/11/2021
  */
 
 
@@ -20,20 +20,20 @@ const sql = require("mssql");
 const app = express();
 require("dotenv").config();
 
-app.use(
-  fileUpload({
-    useTempFiles: false,
-    limits: { fileSize: 1 * 1024 * 1024 },
-  })
-);
+// app.use(
+//   fileUpload({
+//     useTempFiles: false,
+//     limits: { fileSize: 1 * 1024 * 1024 },
+//   })
+// );
 
 //import custom modules or files
 const config = require("./dbconfig.js");
-const userRouter = require("./routes/userRoutes");
+// const userRouter = require("./routes/userRoutes");
 const genericRouter = require("./routes/genericRoutes");
-const adminRouter = require("./routes/adminRoutes");
-const postRouter = require("./routes/postRoutes");
-const frndRouter = require("./routes/frndRoutes");
+// const adminRouter = require("./routes/adminRoutes");
+// const postRouter = require("./routes/postRoutes");
+// const frndRouter = require("./routes/frndRoutes");
 
 const savedPostRouter = require("./routes/savePostRoute.js");
 
